@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sarmistha Sarkar — clinical research, healthcare, and AI/ML.">
+  <title>Sarmistha Sarkar | Clinical Research & AI</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --surface: #ffffff;
+      --ink: #172033;
+      --muted: #5e687b;
+      --accent: #5b5bd6;
+      --accent-dark: #4141b5;
+      --line: #e5e8f1;
+      --soft: #eeeeff;
+      --shadow: 0 14px 40px rgba(30, 41, 80, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; color: var(--ink); }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 22px; font-size: .94rem; }
+    .navlinks a { color: var(--muted); }
+    .navlinks a:hover { color: var(--accent); }
+    .hero { padding: 92px 0 78px; }
+    .hero-grid { display: grid; grid-template-columns: 1.5fr .8fr; align-items: center; gap: 52px; }
+    .eyebrow { display: inline-block; padding: 6px 12px; border-radius: 99px; background: var(--soft); color: var(--accent-dark); font-size: .82rem; font-weight: 750; }
+    h1 { font-size: clamp(2.7rem, 6vw, 4.8rem); line-height: 1.04; letter-spacing: -.065em; margin: 20px 0; }
+    .gradient { color: var(--accent); }
+    .lead { max-width: 670px; font-size: 1.14rem; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    .btn.primary:hover { background: var(--accent-dark); color: white; }
+    .btn.secondary { background: var(--surface); color: var(--ink); }
+    .profile-card { background: var(--surface); border: 1px solid var(--line); padding: 28px; border-radius: 26px; box-shadow: var(--shadow); }
+    .monogram { width: 92px; height: 92px; border-radius: 25px; display: grid; place-items: center; color: white; font-size: 2rem; font-weight: 850; background: linear-gradient(135deg, #6262e9, #8b73d9 65%, #c2a8f7); margin-bottom: 22px; }
+    .profile-card h2 { margin: 0 0 5px; font-size: 1.25rem; }
+    .profile-card p { color: var(--muted); margin: 0 0 18px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: #f1f2f8; color: #4d5870; border-radius: 9px; padding: 6px 10px; font-size: .82rem; }
+    section { padding: 72px 0; }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.7rem); letter-spacing: -.045em; margin: 0 0 8px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 23px; box-shadow: 0 5px 20px rgba(30,41,80,.035); }
+    .card .number { color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .08em; }
+    .card h3 { margin: 8px 0; font-size: 1.15rem; }
+    .card p { color: var(--muted); font-size: .95rem; margin: 0 0 15px; }
+    .card .chips { margin: 15px 0; }
+    .split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: start; }
+    .about-panel { background: var(--soft); border-radius: 22px; padding: 28px; }
+    .about-panel h3 { margin-top: 0; }
+    .about-panel p { color: #4f5574; }
+    .timeline { border-left: 2px solid #dcdcf7; padding-left: 24px; }
+    .event { position: relative; margin: 0 0 28px; }
+    .event::before { content: ""; position: absolute; width: 10px; height: 10px; background: var(--accent); border: 4px solid var(--bg); border-radius: 50%; left: -32px; top: 7px; }
+    .event h3 { margin: 0; font-size: 1.08rem; }
+    .event .meta { color: var(--accent-dark); font-size: .88rem; font-weight: 700; }
+    .event p { margin: 7px 0 0; color: var(--muted); }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .skill h3 { margin: 0 0 10px; font-size: 1rem; }
+    .skill p { color: var(--muted); margin: 0; font-size: .93rem; }
+    .contact-box { background: #20264a; color: white; border-radius: 24px; padding: 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .contact-box p { color: #d7d9ed; margin-bottom: 0; }
+    .contact-box .btn { background: white; color: #20264a; border-color: white; white-space: nowrap; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 60px; }
+      .cards, .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .profile-card { max-width: 520px; }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: min(100% - 28px, 1100px); }
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 10px; }
+      .navlinks { gap: 14px; font-size: .87rem; }
+      .cards, .skill-grid { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+      .hero { padding-bottom: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">Sarmistha Sarkar</a>
+      <div class="navlinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Clinical Research · Healthcare · AI/ML</span>
+          <h1>Bridging <span class="gradient">healthcare</span>, research, and intelligent technology.</h1>
+          <p class="lead">I'm Sarmistha Sarkar, a physician-trained clinical research professional and site director with a growing focus on artificial intelligence, machine learning, and data-driven healthcare solutions.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my projects ↗</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/sarmistha-sarkar-406324139" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <div class="monogram" aria-hidden="true">SS</div>
+          <h2>Sarmistha Sarkar, MBBS, MD, MS, CCRC</h2>
+          <p>A clinical research leader exploring practical applications of AI and data science.</p>
+          <div class="chips">
+            <span class="chip">Clinical Research</span><span class="chip">Python</span>
+            <span class="chip">Machine Learning</span><span class="chip">Healthcare AI</span>
+            <span class="chip">Research Operations</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap split">
+        <div class="section-head">
+          <h2>About me</h2>
+          <p>Combining clinical perspective, research experience, and emerging AI/ML skills.</p>
+        </div>
+        <div>
+          <p>I bring experience across clinical research operations, participant safety, regulatory readiness, study start-up, and cross-functional coordination. My medical and biomedical science training informs how I approach evidence, data quality, and healthcare problems.</p>
+          <p>I completed the Post Graduate Program in Artificial Intelligence and Machine Learning: Business Applications through The University of Texas at Austin in 2026. My portfolio projects span predictive modeling, computer vision, natural language processing, and model deployment.</p>
+          <div class="chips">
+            <span class="chip">MBBS</span><span class="chip">MD Biochemistry</span>
+            <span class="chip">MS Nutritional Sciences</span><span class="chip">AI/ML Program</span>
+            <span class="chip">CCRC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Selected AI & data science projects</h2>
+          <p>Course projects from my AI/ML learning journey. Add your public GitHub or notebook links to each project when ready.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="number">01 / MODEL DEPLOYMENT</span>
+            <h3>SuperKart</h3>
+            <p>Built a sales forecasting project focused on predicting outlet revenue to support inventory planning and regional sales decisions.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Model Tuning</span><span class="chip">Flask</span><span class="chip">Streamlit</span></div>
+            <a href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">Find projects on GitHub ↗</a>
+          </article>
+          <article class="card">
+            <span class="number">02 / COMPUTER VISION</span>
+            <h3>HelmNet</h3>
+            <p>Explored image classification methods for detecting safety helmets, including CNNs, transfer learning, and data augmentation.</p>
+            <div class="chips"><span class="chip">CNN</span><span class="chip">Computer Vision</span><span class="chip">Fine-tuning</span></div>
+            <a href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">Find projects on GitHub ↗</a>
+          </article>
+          <article class="card">
+            <span class="number">03 / GENERATIVE AI</span>
+            <h3>Medical Assistant</h3>
+            <p>Designed a RAG-based healthcare assistant concept using medical manuals to organize information and support access to relevant guidance.</p>
+            <div class="chips"><span class="chip">RAG</span><span class="chip">LLMs</span><span class="chip">Prompt Engineering</span></div>
+            <a href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">Find projects on GitHub ↗</a>
+          </article>
+          <article class="card">
+            <span class="number">04 / NEURAL NETWORKS</span>
+            <h3>ReneWind</h3>
+            <p>Built classification models to identify potential wind turbine failures and support proactive maintenance planning.</p>
+            <div class="chips"><span class="chip">EDA</span><span class="chip">Classification</span><span class="chip">Neural Networks</span></div>
+            <a href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">Find projects on GitHub ↗</a>
+          </article>
+          <article class="card">
+            <span class="number">05 / MACHINE LEARNING</span>
+            <h3>EasyVisa</h3>
+            <p>Analyzed visa applicant data and developed predictive modeling approaches to identify factors associated with visa decisions.</p>
+            <div class="chips"><span class="chip">Ensemble Models</span><span class="chip">Feature Analysis</span><span class="chip">Tuning</span></div>
+            <a href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">Find projects on GitHub ↗</a>
+          </article>
+          <article class="card">
+            <span class="number">06 / DATA ANALYSIS</span>
+            <h3>FoodHub & Personal Loan</h3>
+            <p>Explored customer and business data to generate insights, evaluate predictive models, and inform business recommendations.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">EDA</span><span class="chip">Decision Trees</span></div>
+            <a href="https://www.mygreatlearning.com/eportfolio/sarmistha-sarkar" target="_blank" rel="noopener">View full e-portfolio ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap split">
+        <div class="section-head">
+          <h2>Experience & education</h2>
+          <p>A foundation in medicine and biomedical research, with hands-on clinical research operations experience.</p>
+        </div>
+        <div class="timeline">
+          <div class="event">
+            <h3>Site Director — QCR Network</h3>
+            <div class="meta">Austin, Texas · Aug 2026–Present</div>
+            <p>Oversee clinical research operations, study start-up, recruitment, regulatory compliance, participant visits, data quality, and team coordination.</p>
+          </div>
+          <div class="event">
+            <h3>Senior Clinical Research Coordinator & Rater — The IMA Group</h3>
+            <div class="meta">Austin, Texas · Jun–Jul 2026</div>
+            <p>Supported CNS trial operations, participant visits, recruitment, study start-up, regulatory documentation, and site implementation.</p>
+          </div>
+          <div class="event">
+            <h3>Clinical Research Coordinator & Rater — Community Clinical Research</h3>
+            <div class="meta">Austin, Texas · Mar 2023–Jun 2026</div>
+            <p>Coordinated clinical trials, regulatory documentation, safety reporting, psychometric assessments, and research workflows.</p>
+          </div>
+          <div class="event">
+            <h3>AI & Machine Learning Program</h3>
+            <div class="meta">The University of Texas at Austin · 2026</div>
+            <p>Coursework in Python, machine learning, neural networks, computer vision, NLP, generative AI, SQL, and model deployment.</p>
+          </div>
+          <div class="event">
+            <h3>MS Nutritional Sciences</h3>
+            <div class="meta">The University of Texas at Austin · 2021–2023</div>
+            <p>Biochemical and Functional Nutrition; graduate research focused on obesity, tumor microenvironment, and macrophage polarization.</p>
+          </div>
+          <div class="event">
+            <h3>MD Biochemistry · MBBS</h3>
+            <div class="meta">India · 2013–2019</div>
+            <p>Medical and biomedical science training, including research, teaching, and clinical internship experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Skills & areas of focus</h2>
+          <p>A multidisciplinary toolkit for research, data analysis, and technology-enabled healthcare.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill"><h3>AI & Machine Learning</h3><p>Python, machine learning fundamentals, classification, neural networks, computer vision, NLP, generative AI, model evaluation.</p></div>
+          <div class="skill"><h3>Data & Visualization</h3><p>Pandas, NumPy, exploratory data analysis, statistical analysis, business insights, data visualization, SQL fundamentals.</p></div>
+          <div class="skill"><h3>Clinical Research</h3><p>Clinical trial coordination, study start-up, recruitment, participant safety, monitoring visits, protocol adherence.</p></div>
+          <div class="skill"><h3>Regulatory & Quality</h3><p>FDA regulations, ICH-GCP, IRB submissions, AE/SAE reporting, essential documents, inspection readiness.</p></div>
+          <div class="skill"><h3>Research Systems</h3><p>RealTime CTMS, CRIO, Medidata Rave, Zelta, REDCap, Veeva Vault, electronic regulatory systems.</p></div>
+          <div class="skill"><h3>Scientific Background</h3><p>Medical training, biochemistry, biomedical research, laboratory methods, scientific literature, evidence-based thinking.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <h2>Let's connect</h2>
+            <p>Interested in healthcare AI, data science, clinical research innovation, or research collaboration? I'd be happy to connect.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://www.linkedin.com/in/sarmistha-sarkar-406324139" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/DrSarmistha1111" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="https://www.mygreatlearning.com/eportfolio/sarmistha-sarkar" target="_blank" rel="noopener">E-portfolio ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Sarmistha Sarkar</span>
+      <span>Built with HTML & CSS · Hosted with GitHub Pages</span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
